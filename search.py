@@ -91,7 +91,6 @@ def depthFirstSearch(problem):
     stack = Stack()
     visited = set()
 
-    # Each element: (state, path)
     stack.push((problem.getStartState(), []))
 
     while not stack.isEmpty():

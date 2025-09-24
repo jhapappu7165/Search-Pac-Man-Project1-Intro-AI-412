@@ -85,7 +85,6 @@ class PitchersState:
         Note: This function *does not* change the current object. Instead,
         it returns a new object, return_state.
         """
-        # Snapshot
         capacities = list(self.capacities)
         contents = list(self.contents)
 
@@ -101,10 +100,10 @@ class PitchersState:
             contents[i] -= amount
             contents[j] += amount
 
-        # Parse 'f:i', 'e:i', 'p:i:j'
         if isinstance(move, str):
             parts = move.split(':')
             kind = parts[0]
+
             if kind == 'f':
                 fill(int(parts[1]))
             elif kind == 'e':
